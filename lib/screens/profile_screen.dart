@@ -42,10 +42,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Stack(
                     children: [
-                      const CircleAvatar(
+                       CircleAvatar(
                         radius: 60,
-                        backgroundImage: AssetImage('assets/profile_picture.png'),
-                        backgroundColor: Colors.grey,
+                        backgroundColor: Colors.blue[100],
                       ),
                       Positioned(
                         bottom: 0,
@@ -345,7 +344,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         child: Icon(
           icon,
-          color: Colors.grey[700],
+          color: Colors.blue[700],
           size: 20,
         ),
       ),
@@ -420,7 +419,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Colors.grey[100],
+            color: Colors.blue[100],
             shape: BoxShape.circle,
           ),
           child: Icon(icon, size: 30),
@@ -498,7 +497,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, '/login');
               // Handle logout logic here
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Logged out successfully')),
